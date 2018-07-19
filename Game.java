@@ -16,7 +16,7 @@ public class Game {
       {" | "," - ", " - ", " - ", " - ", " - ", " - ", " - ", " - ", " | "},
       {" | "," - ", " - ", " - ", " - ", " - ", " - ", " - ", " - ", " | "},
       {" | "," - ", " - ", " - ", " - ", " - ", " - ", " - ", " - ", " | "},
-      {" | "," - ", " - ", " - ", " - ", " - ", " - ", " - ", " W ", " | "},
+      {" | "," - ", " - ", " - ", " - ", " - ", " - ", " - ", " - ", " | "},
       {" | "," - ", " # ", " # ", " - ", " - ", " - ", " - ", " - ", " | "},
       {" | "," # ", " # ", " # ", " - ", " - ", " - ", " ^ ", " ^ ", " | "},
       {" | "," # ", " # ", " # ", " - ", " - ", " - ", " ^ ", " ^ ", " | "},
@@ -50,31 +50,6 @@ public class Game {
     return s;
   }
 
-  public static int guessingGame(){
-    int secretNumber;
-    int maxNum = 99;
-    secretNumber = (int) (Math.random() * maxNum + 1);           
-    int guess;
-    int tries = 0;
-
-    do {
-      System.out.print("Enter a guess (1-"+(maxNum+1)+"):");
-      guess = IO.readInt();
-
-      if (guess == secretNumber){
-        System.out.println("Your guess is correct. Congratulations!");
-      } else if (guess < secretNumber) {
-        System.out.println("Your guess is smaller than the secret number.");
-      } else if (guess > secretNumber) {
-        System.out.println("Your guess is greater than the secret number.");
-      }
-      tries++;
-    } while (guess != secretNumber);
-
-    System.out.println("Number of tries: "+tries);
-    return tries;
-  }
-
   public static void main(String[] args){
     // (x,y) of the player
     int pos_x = 0;
@@ -104,13 +79,6 @@ public class Game {
         System.out.println("You fell into the lake!");
         System.out.println("Game Over!");
         return;
-      }
-      if(printMap(pos_x, pos_y, false).equals(" W ")){
-        int tries = guessingGame();
-        if ( tries > 10 ){
-          System.out.println("You're a loser!");
-          return;
-        }
       }
     }
 
