@@ -49,6 +49,21 @@ public class Game {
     // Return the symbol found at desired location
     return s;
   }
+  
+  // Write the logic for the guessing game here
+  // Should return the number of tries taken before getting it right
+  public static int guessingGame(int range) {
+    // Generate a random number between [1, range]
+    int secretNumber = (int) (Math.random() * range + 1);
+    return 0;
+  }
+  
+  // Should return the number of tries taken before getting it right
+  // Paste your 'main method' code here and call 'hangman.printMap(###)'
+  public static int hangman() {
+    // use 'contains()' here
+    return 0;
+  }
 
   public static void main(String[] args){
     // (x,y) of the player
@@ -75,6 +90,7 @@ public class Game {
       }else if(input.equalsIgnoreCase("left")){
         pos_x--;
       }
+      System.out.print("\033[H\033[2J"); // This clears the screen buffer
       if(printMap(pos_x, pos_y, false).equals(" # ")){
         System.out.println("You fell into the lake!");
         System.out.println("Game Over!");
